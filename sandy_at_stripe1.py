@@ -34,7 +34,8 @@ print listify_ip_address(ip_string)
 with ff as open('/tmp/filename.txt', 'r'):
     ff.readlines()
 
-
 def listify_ip_address(ip_string):
     some_array = map(int, ip_string.split("."))
+
+    # .split returns a list with each of the split portions as an entry
 

@@ -10,8 +10,6 @@
 #you can also de-allocate machines.
 
 
-
-
 class Tracker (object):
     main_hash = {}
 
