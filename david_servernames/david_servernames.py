@@ -9,6 +9,7 @@
 
 #you can also de-allocate machines.
 
+from sys import stdin
 
 class Tracker (object):
     main_hash = {}
@@ -56,13 +57,7 @@ class Tracker (object):
         else:
             main_hash[base_sever_name][suffix_number] = False
 
-tracker = Tracker()
-tracker.allocate("accounting")
-tracker.allocate("accounting")
-tracker.allocate("accounting")
-tracker.deallocate("accounting", 2)
-tracker.allocate("accounting")
-tracker.allocate("risk")
+
 
 # ask if efficiency matters
 # can we simplify the problem?
