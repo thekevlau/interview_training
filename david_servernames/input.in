@@ -1,0 +1,7 @@
+tracker = Tracker()
+tracker.allocate("accounting")
+tracker.allocate("accounting")
+tracker.allocate("accounting")
+tracker.deallocate("accounting", 2)
+tracker.allocate("accounting")
+tracker.allocate("risk")
