@@ -9,7 +9,10 @@ from sys import stdin
 
 
 n = 100
-m = 10
+m = 5
+
+# handle 1,2 case
+# handle stdin/stdout and unit testing
 
 # returns a list of all the primes in between
 def find_primes_between (n, m):
@@ -17,11 +20,16 @@ def find_primes_between (n, m):
     # divide by all primes before it
     # divide by all other primes between n, m
     # make sure we start with an odd number
+    
+    # primes to check against
+    # 1 is not a prime number, the loop excludes even numbers thus 2 does not need to be added
     primes = [3]
     primes_between = []
-    for i in xrange(1, n, 2):
-        if i is 1 or i is 2 or i is 3:
-            continue
+    if m < 2:
+        primes_between.append(2)
+    if m < 3:
+        primes_between.append(3)
+    for i in xrange(3, n, 2):
         # check if number is prime
         for prime in primes:
             # if is not prime, move onto next number i
@@ -31,11 +39,9 @@ def find_primes_between (n, m):
         else:
             print ("prime number identified: %s" % (i))
             primes.append(i)
-            if i > m:
+            if i >= m:
                 print ("prime between n, m identified: %s" % (i))
                 primes_between.append(i)
-    b = [1, 2]
-    primes[:0] = b
 
     print ("DONE!")
     print ("All primes are as follows:")
