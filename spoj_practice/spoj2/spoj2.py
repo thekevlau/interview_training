@@ -7,10 +7,7 @@ from sys import stdin
 # N < 1,000,000,000
 # Find all primes between a given n, m
 
-
 # handle stdin/stdout and unit testing
-
-
 
 # returns a list of all the primes in between
 def find_primes_between (n, m):
@@ -18,32 +15,32 @@ def find_primes_between (n, m):
     # divide by all primes before it
     # divide by all other primes between n, m
     # make sure we start with an odd number
-    
+
     # primes to check against
     # 1 is not a prime number, the loop excludes even numbers thus 2 does not need to be added
     primes = [3]
     primes_between = []
-    
+
     # unique cases
     if m < 2:
         primes_between.append(2)
     if m <= 3:
         primes_between.append(3)
-    
+
     # check all primes
     for i in xrange(3, n+1, 2):
         # check if number is prime
         for prime in primes:
             # if is not prime, move onto next number i
-            if i%prime is 0:
+            if i%prime == 0:
                 break
         # if the number is in fact prime,
         else:
             primes.append(i)
             if i >= m:
                 primes_between.append(i)
-    
-    return primes_between 
+
+    return primes_between
 
 num_of_lines = int(stdin.readline())
 for i in xrange(num_of_lines):
