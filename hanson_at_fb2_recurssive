@@ -1,0 +1,35 @@
+# given a list of unqiue, integers, return all possible subsets
+# input: [1, 2, 3]
+# output: [[1], [2], [3], [1, 2], [1, 3], [2, 3], [1,2,3] []]
+
+# base case, input [], output []
+# input [1], output [], [1]
+# input [2], output [], [2], [1], [1, 2]
+# every time you add the new number to previously existing elements
+
+# recurssively this time
+# each iteration, the problem should get smaller. that's how you will know you won't infinite loop
+# kk
+# start at empty list of lists, 
+# recursively add to the output list while removing ints from the input list.
+# continue until input list is gone (base case)
+
+
+def subsets (int_list):
+# you want
+	output_list = [[]]
+	for i in sorted(int_list):
+		for lists in output_list:
+
+			# wait, i think i'm making the same logic error as before....let's wait to get this clarified, then come back
+			lists.append(i)
+
+		# slice the first char
+		int_list[1:]
+		
+
+	if int_list not Empty:
+
+		subsets(new_list)
+
+	int_list
