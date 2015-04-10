@@ -1,3 +1,4 @@
+import math
 from sys import stdin
 # http://www.spoj.com/problems/PRIME1/
 # stdin line 1 is number of iterations, followed by that number of pairs of numbers in the form: m (space) n
@@ -15,7 +16,7 @@ def find_primes_between (n, m):
     # check all primes
     for i in xrange(2, n+1):
         # in brackets, evaluates is_divisible calculation for a given i against all known primes (denoted by for prime in primes). think about it like the the for loop is being evaluated with the is_divisible function nested within. all of the results are compiled into a list of booleans. this list of boolean values (again, for a given i) is returned to the function 'any', which then checks for if any of those are true. if so, is_composite is set to true.
-        is_composite = any(is_divisible(i, prime) for prime in primes)
+        is_composite = any(is_divisible(i, sqrt(prime)) for prime in primes)
         # then we say when is_composite is false for a given i, aka its a prime, then we append it to the list of primes
         if not is_composite:
             primes.append(i)
